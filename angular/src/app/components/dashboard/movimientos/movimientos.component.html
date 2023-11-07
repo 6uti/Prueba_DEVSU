@@ -1,0 +1,57 @@
+<!-- Page Content -->
+<div style="margin-left:25%">
+
+  <div class="w3-container w3-teal">
+    <h1>Movimientos</h1>
+  </div>|                                                                                                                                                                                                                                                                                                           
+  
+  <div class="w3-container">
+      <div>
+          <input
+    type="search"
+    id="mySearch"
+    name="q"
+    placeholder="Search the site…"
+    aria-label="Search through site content" />
+    <button class="btn warning" routerLink="/dashboard/crear-cuenta">Nuevo</button>
+
+      </div>
+  <!-- 
+<button class="btn secondary">Secondary</button>
+<button class="btn success">Success</button>
+<button class="btn warning">Warning</button>
+-->
+  <br>
+      <table class="tg">
+      <tr>
+      <th class="tg-amwm">Numero Cuenta</th>
+      <th class="tg-amwm">Tipo</th>
+      <th class="tg-amwm">Saldo Inicial</th>
+      <th class="tg-amwm">Estado</th>
+      <th class="tg-amwm">Movimiento</th>
+      
+      <!-- <th class="tg-amwm">Genero</th> -->
+      <th class="tg-amwm">Opciones</th>
+      </tr>
+      <tr *ngFor='let item of listMovimientos'>
+          <td class="tg-0lax">{{ item.numero_cuenta }}</td>
+          <td class="tg-0lax" *ngIf="item.tipo_cuenta === 1">Ahorros</td>
+          <td class="tg-0lax" *ngIf="item.tipo_cuenta === 2">Corriente</td>
+          <td class="tg-0lax">{{ item.saldo_inicial }}</td>
+          <td class="tg-0lax">{{ item.estado_cuenta }}</td>
+          <!-- <td class="tg-0lax">{{ item.cliente_nombre }}</td> -->
+          <td class="tg-0lax" *ngIf="item.tipo_movimiento === 1">Retiro de {{ item.valor }}</td>
+          <td class="tg-0lax" *ngIf="item.tipo_movimiento === 2">Depósito de {{ item.valor }}</td>
+          
+          <!-- <td class="tg-0lax">{{ item.genero }}</td> -->
+          <td class="tg-0lax">
+              <button class="btn primary" (click)="actualizarMovimiento( item )"><i class="fas fa-pen"></i></button>
+              <button class="btn danger" (click)="eliminarMovimiento( item.id )"><i class="fas fa-trash"></i></button>
+              <!-- <input type="button" value="eliminar" /> 
+              <i class="fa-solid fa-trash"></i>-->
+          </td>
+      </tr>
+      </table>
+  </div>
+
+</div>

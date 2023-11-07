@@ -1,0 +1,45 @@
+<!-- Page Content -->
+<div style="margin-left:25%">
+
+    <div class="w3-container w3-teal">
+      <h1>Nuevo Cliente</h1>
+    </div>
+    
+    <div class="w3-container">
+    <br>
+<!-- [formGroup]="formulario" -->
+    <form (ngSubmit)="registrarCliente()" class="form-example" [formGroup]="formulario">
+        <div class="form-example">
+          <label for="name">Nombres: </label>
+          <input type="text" required formControlName="nombres" />
+        </div>
+        <div class="form-example">
+          <label for="email">Edad: </label>
+          <input required formControlName="edad"/>
+        </div>
+        <div class="form-example">
+            <label for="email">Genero: </label>
+            <input required formControlName="genero"/>
+        </div>
+        <div class="form-example">
+            <label for="email">Dirección: </label>
+            <input required formControlName="direccion"/>
+        </div>
+        <div class="form-example">
+            <label for="email">Telefono: </label>
+            <input formControlName="telefono" required />
+        </div>
+        <div class="form-example">
+            <label for="email">Contraseña: </label>
+            <input formControlName="contrasenia" required />
+        </div>
+        <div class="form-example">
+          <input type="button" value="Cancelar" class="btn danger" routerLink="/dashboard/clientes"/>
+          <input type="submit" value="Registrar" class="btn success" />
+        </div>
+      </form>
+        
+    
+    </div>
+ 
+</div>
